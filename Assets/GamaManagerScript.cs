@@ -152,6 +152,7 @@ public class GameManagerScript : MonoBehaviour
             debugText += "\n";
         }
 
+
     }
 
     // Update is called once per frame
