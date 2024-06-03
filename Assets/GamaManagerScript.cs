@@ -57,6 +57,10 @@ public class GameManagerScript : MonoBehaviour
             if (!success) { return false; }
 
         }
+        if (field[moveTo.y, moveTo.x] != null && field[moveTo.y, moveTo.x].tag == "Ozen")
+        {
+            return false; 
+        }
 
         field[moveTo.y, moveTo.x] = field[moveFrom.y, moveFrom.x];
         Vector3 moveToPosition = new Vector3(
@@ -68,8 +72,8 @@ public class GameManagerScript : MonoBehaviour
 
         for (int i = 0; i < 5; ++i)
         {
-            field[moveFrom.y, moveFrom.x] = Instantiate(particlePrefab,
-           new Vector3(moveFrom.x,  moveFrom.y, 0.0f), Quaternion.identity);
+           Instantiate(particlePrefab,
+           new Vector3(moveFrom.x, map.GetLength(0)- moveFrom.y, 0.0f), Quaternion.identity);
         }
        
 
@@ -111,7 +115,7 @@ public class GameManagerScript : MonoBehaviour
         map = new int[,] {
         { 4, 0, 3, 0, 0, },
         { 4, 0, 2, 0, 0, },
-        { 4, 0, 1, 2, 3, },
+        { 0, 4, 1, 2, 3, },
         { 4, 0, 2, 0, 0, },
         { 4, 0, 3, 0, 0, },
         };

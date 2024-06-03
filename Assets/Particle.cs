@@ -31,13 +31,7 @@ public class Particle : MonoBehaviour
     }
 
 
-    public static class Random
-    {
-        public static float Range(float minInclusive, float maxInclusive)
-        {
-            return  maxInclusive;
-        }
-    }
+    
 
     // Update is called once per frame
     void Update()
